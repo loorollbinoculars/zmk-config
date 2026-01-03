@@ -1,2 +1,0 @@
-config SHIELD_TWO_TEST
-    def bool $(shields_list_contains, two_test)

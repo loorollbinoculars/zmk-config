@@ -1,0 +1,7 @@
+if SHIELD_TWOTEST
+
+config ZMK_KEYBOARD_NAME
+    default "TWOTEST"
+
+
+endif
