@@ -1,0 +1,6 @@
+if SHIELD_SUPER_ERGO_TEST
+
+config ZMK_KEYBOARD_NAME
+    default "super_ergo_test"
+
+endif # SHIELD_SUPER_ERGO_TEST
