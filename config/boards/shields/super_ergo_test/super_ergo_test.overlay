@@ -8,11 +8,10 @@
 
 / {
     chosen {
-        zmk,physical - layout = &default_layout;
-    }
-    ;
+        zmk,physical-layout = &default_layout;
+    };
 
-kscan: kscan {
+    kscan: kscan {
         // If the hardware does not use a switch matrix, change this to the
         // appropriate driver and update the properties below to match.
         // See https://zmk.dev/docs/config/kscan for supported key scan drivers.
@@ -20,32 +19,28 @@ kscan: kscan {
         // Set this to "col2row" or "row2col" to match the hardware. If using
         // "row2col", change the col-gpios to (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)
         // and the row-gpios to GPIO_ACTIVE_HIGH.
-        diode - direction = "col2row";
-        wakeup - source;
+        diode-direction = "col2row";
+        wakeup-source;
 
         // Replace these comments with the GPIO pins in the matrix.
         // See https://zmk.dev/docs/development/hardware-integration/new-shield#shield-overlays
-        col - gpios
-            = < &pro_micro 024 GPIO_ACTIVE_HIGH >
-            , < &pro_micro 100 GPIO_ACTIVE_HIGH >
-            , < &pro_micro 011 GPIO_ACTIVE_HIGH >
+        col-gpios =
+            <&pro_micro 0 24 GPIO_ACTIVE_HIGH>,
+            <&pro_micro 1 0 GPIO_ACTIVE_HIGH>,
+            <&pro_micro 0 11 GPIO_ACTIVE_HIGH>;
 
-        ;
+        row-gpios =
+            <&pro_micro 0 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+            <&pro_micro 1 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+            <&pro_micro 1 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+    };
 
-        row - gpios
-            = < &pro_micro 104(GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN) >
-            , < &pro_micro 106(GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN) >
-
-        ;
-    }
-    ;
-
-default_transform: default_transform {
+    default_transform: default_transform {
         // See https://zmk.dev/docs/development/hardware-integration/new-shield#matrix-transform
         // for how to configure this
         compatible = "zmk,matrix-transform";
-        columns = < 2 >;
-        rows = < 2 >;
+        columns = <3>;
+        rows = <3>;
 
         map = <
         //   Key 1 | Key 2 | Key 3
@@ -55,7 +50,5 @@ default_transform: default_transform {
         //   Key 7 | Key 8 | Key 9
             RC(2,0) RC(2,1) RC(2,2)
         >;
-    }
-    ;
-}
-;
+    };
+};
