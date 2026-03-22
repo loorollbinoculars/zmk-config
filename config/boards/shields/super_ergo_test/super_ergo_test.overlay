@@ -74,3 +74,8 @@
 &uicr {
     nfct-pins-as-gpios;
 };
+
+// Disable the nice!nano's onboard blue LED
+&blue_led {
+    status = "disabled";
+};
