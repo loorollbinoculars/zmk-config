@@ -18,9 +18,9 @@
             // Row 3: 6 keys + encoder button (mute)
                 &kp CAPS    &kp A       &kp X       &kp C       &kp V       &kp B      &kp C_MUTE
             // Row 4: 7 keys
-                &kp LSHFT   &kp Z       &kp UP      &mo 1       &kp SPACE   &kp BSPC    &kp LGUI
+                &kp LSHFT   &kp Z       &kp UP      &mo 1       &kp LALT   &kp SPACE    &kp BSPC
             // Row 5: 7 keys
-                &kp LCTRL   &kp LEFT    &kp DOWN    &kp RIGHT   &kp LALT    &kp PG_UP   &kp PG_DN
+                &kp LCTRL   &kp LEFT    &kp DOWN    &kp RIGHT   &kp LGUI    &kp PG_UP   &kp PG_DN
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
