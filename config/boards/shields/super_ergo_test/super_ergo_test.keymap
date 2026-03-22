@@ -16,7 +16,7 @@
             // Row 2: 6 keys
                 &kp TAB     &kp Q       &kp S       &kp D       &kp F       &kp G
             // Row 3: 6 keys + encoder button (mute)
-                &kp CAPS    &kp A       &kp X       &kp C       &kp V       &trans      &kp C_MUTE
+                &kp CAPS    &kp A       &kp X       &kp C       &kp V       &kp B      &kp C_MUTE
             // Row 4: 7 keys
                 &kp LSHFT   &kp Z       &kp UP      &mo 1       &kp SPACE   &kp BSPC    &kp LGUI
             // Row 5: 7 keys
