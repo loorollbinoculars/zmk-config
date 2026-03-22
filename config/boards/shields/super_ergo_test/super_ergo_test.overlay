@@ -12,7 +12,7 @@
         diode-direction = "col2row";
         wakeup-source;
 
-        // Columns: right-side pins (031, 029, 002, 115, 113, 111, 010)
+        // Columns: 031, 029, 002, 115, 113, 111, 008
         col-gpios =
             <&gpio0 31 GPIO_ACTIVE_HIGH>,
             <&gpio0 29 GPIO_ACTIVE_HIGH>,
@@ -20,16 +20,16 @@
             <&gpio1 15 GPIO_ACTIVE_HIGH>,
             <&gpio1 13 GPIO_ACTIVE_HIGH>,
             <&gpio1 11 GPIO_ACTIVE_HIGH>,
-            <&gpio0 10 GPIO_ACTIVE_HIGH>;
+            <&gpio0  8 GPIO_ACTIVE_HIGH>;
 
-        // Rows: left-side pins (008, 017, 020, 022, 024, 100)
+        // Rows: 017, 020, 022, 024, 100, 011
         row-gpios =
-            <&gpio0  8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
             <&gpio0 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
             <&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
             <&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
             <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-            <&gpio1  0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+            <&gpio1  0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+            <&gpio0 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
     };
 
     default_transform: default_transform {
@@ -54,10 +54,10 @@
         >;
     };
 
-    // Encoder: left-side pins 011 (A) and 104 (B)
+    // Encoder A: 010 (NFC pin), Encoder B: 104
     encoder: encoder {
         compatible = "alps,ec11";
-        a-gpios = <&gpio0 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        a-gpios = <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&gpio1  4 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         steps = <80>;
         status = "okay";
@@ -70,7 +70,7 @@
     };
 };
 
-// Enable NFC pins (010 = P0.10) as regular GPIO
+// Enable NFC pin (010 = P0.10) as regular GPIO for encoder A
 &uicr {
     nfct-pins-as-gpios;
 };
