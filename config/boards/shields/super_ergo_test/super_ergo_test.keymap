@@ -1,21 +1,29 @@
-// This file was generated from a template. Edit it to match your keyboard.
-// See https://zmk.dev/docs/development/hardware-integration/new-shield for more instructions.
+// See https://zmk.dev/docs/development/hardware-integration/new-shield#default-keymap.
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
 / {
-    // Define a default keymap here.
-    // See https://zmk.dev/docs/development/hardware-integration/new-shield#default-keymap.
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
-                &kp A &kp B &kp C
-                &kp D &kp E &kp F
-                &kp G &kp H &kp I
+            // Row 0: 4 keys + encoder button
+                &trans  &trans  &trans  &trans  &trans
+            // Row 1: 6 keys
+                &trans  &trans  &trans  &trans  &trans  &trans
+            // Row 2: 6 keys
+                &trans  &trans  &trans  &trans  &trans  &trans
+            // Row 3: 6 keys + encoder button
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans
+            // Row 4: 7 keys
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans
+            // Row 5: 7 keys
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
     };
 };
