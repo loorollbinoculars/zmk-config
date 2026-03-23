@@ -74,3 +74,12 @@
 &uicr {
     nfct-pins-as-gpios;
 };
+
+// Keep nice!nano blue LED (P0.15) always on
+&gpio0 {
+    blue-led-hog {
+        gpio-hog;
+        gpios = <15 0>;
+        output-low;
+    };
+};
