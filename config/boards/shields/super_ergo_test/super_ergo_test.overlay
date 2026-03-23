@@ -80,6 +80,6 @@
     blue-led-hog {
         gpio-hog;
         gpios = <15 0>;
-        output-low;
+        output-high;
     };
 };
