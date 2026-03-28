@@ -1,2 +1,5 @@
-config SHIELD_SUPER_ERGO_TEST
-    def_bool $(shields_list_contains,super_ergo_test)
+config SHIELD_SUPER_ERGO_TEST_LEFT
+    def_bool $(shields_list_contains,super_ergo_test_left)
+
+config SHIELD_SUPER_ERGO_TEST_RIGHT
+    def_bool $(shields_list_contains,super_ergo_test_right)
